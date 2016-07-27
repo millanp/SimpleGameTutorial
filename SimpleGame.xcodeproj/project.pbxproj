@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		BE8DDCB21D46750200EFA2F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DDCB11D46750200EFA2F1 /* AppDelegate.swift */; };
-		BE8DDCB41D46750200EFA2F1 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE8DDCB31D46750200EFA2F1 /* GameScene.sks */; };
 		BE8DDCB61D46750200EFA2F1 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DDCB51D46750200EFA2F1 /* GameScene.swift */; };
 		BE8DDCB81D46750200EFA2F1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DDCB71D46750200EFA2F1 /* GameViewController.swift */; };
 		BE8DDCBB1D46750200EFA2F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8DDCB91D46750200EFA2F1 /* Main.storyboard */; };
 		BE8DDCBD1D46750200EFA2F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE8DDCBC1D46750200EFA2F1 /* Images.xcassets */; };
 		BE8DDCC01D46750200EFA2F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE8DDCBE1D46750200EFA2F1 /* LaunchScreen.xib */; };
 		BE8DDCCC1D46750200EFA2F1 /* SimpleGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8DDCCB1D46750200EFA2F1 /* SimpleGameTests.swift */; };
+		BE8DDCDA1D46777300EFA2F1 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = BE8DDCD71D46777300EFA2F1 /* background-music-aac.caf */; };
+		BE8DDCDB1D46777300EFA2F1 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = BE8DDCD81D46777300EFA2F1 /* pew-pew-lei.caf */; };
+		BE8DDCDC1D46777300EFA2F1 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BE8DDCD91D46777300EFA2F1 /* sprites.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +33,6 @@
 		BE8DDCAC1D46750200EFA2F1 /* SimpleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8DDCB01D46750200EFA2F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE8DDCB11D46750200EFA2F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE8DDCB31D46750200EFA2F1 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		BE8DDCB51D46750200EFA2F1 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		BE8DDCB71D46750200EFA2F1 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		BE8DDCBA1D46750200EFA2F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +41,9 @@
 		BE8DDCC51D46750200EFA2F1 /* SimpleGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8DDCCA1D46750200EFA2F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE8DDCCB1D46750200EFA2F1 /* SimpleGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleGameTests.swift; sourceTree = "<group>"; };
+		BE8DDCD71D46777300EFA2F1 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
+		BE8DDCD81D46777300EFA2F1 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
+		BE8DDCD91D46777300EFA2F1 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 		BE8DDCA31D46750100EFA2F1 = {
 			isa = PBXGroup;
 			children = (
+				BE8DDCD51D46777300EFA2F1 /* SimpleGameResources */,
 				BE8DDCAE1D46750200EFA2F1 /* SimpleGame */,
 				BE8DDCC81D46750200EFA2F1 /* SimpleGameTests */,
 				BE8DDCAD1D46750200EFA2F1 /* Products */,
@@ -82,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				BE8DDCB11D46750200EFA2F1 /* AppDelegate.swift */,
-				BE8DDCB31D46750200EFA2F1 /* GameScene.sks */,
 				BE8DDCB51D46750200EFA2F1 /* GameScene.swift */,
 				BE8DDCB71D46750200EFA2F1 /* GameViewController.swift */,
 				BE8DDCB91D46750200EFA2F1 /* Main.storyboard */,
@@ -116,6 +120,24 @@
 				BE8DDCCA1D46750200EFA2F1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BE8DDCD51D46777300EFA2F1 /* SimpleGameResources */ = {
+			isa = PBXGroup;
+			children = (
+				BE8DDCD61D46777300EFA2F1 /* Sounds */,
+				BE8DDCD91D46777300EFA2F1 /* sprites.atlas */,
+			);
+			path = SimpleGameResources;
+			sourceTree = "<group>";
+		};
+		BE8DDCD61D46777300EFA2F1 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				BE8DDCD71D46777300EFA2F1 /* background-music-aac.caf */,
+				BE8DDCD81D46777300EFA2F1 /* pew-pew-lei.caf */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +184,9 @@
 		BE8DDCA41D46750100EFA2F1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Millan Philipose";
 				TargetAttributes = {
 					BE8DDCAB1D46750100EFA2F1 = {
@@ -198,9 +222,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE8DDCDA1D46777300EFA2F1 /* background-music-aac.caf in Resources */,
 				BE8DDCC01D46750200EFA2F1 /* LaunchScreen.xib in Resources */,
 				BE8DDCBD1D46750200EFA2F1 /* Images.xcassets in Resources */,
-				BE8DDCB41D46750200EFA2F1 /* GameScene.sks in Resources */,
+				BE8DDCDB1D46777300EFA2F1 /* pew-pew-lei.caf in Resources */,
+				BE8DDCDC1D46777300EFA2F1 /* sprites.atlas in Resources */,
 				BE8DDCBB1D46750200EFA2F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +310,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -350,6 +377,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Millanmakes.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -360,6 +388,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Millanmakes.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -378,6 +407,7 @@
 				);
 				INFOPLIST_FILE = SimpleGameTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Millanmakes.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleGame.app/SimpleGame";
 			};
@@ -393,6 +423,7 @@
 				);
 				INFOPLIST_FILE = SimpleGameTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Millanmakes.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleGame.app/SimpleGame";
 			};
@@ -417,6 +448,7 @@
 				BE8DDCD11D46750200EFA2F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE8DDCD21D46750200EFA2F1 /* Build configuration list for PBXNativeTarget "SimpleGameTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +457,7 @@
 				BE8DDCD41D46750200EFA2F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

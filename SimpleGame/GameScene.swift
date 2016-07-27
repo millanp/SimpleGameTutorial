@@ -8,38 +8,49 @@
 
 import SpriteKit
 
+func + (left: CGPoint, right: CGPoint) -> CGPoint {
+    return CGPoint(x: left.x + right.x, y: left.y + right.y)
+}
+func - (right: CGPoint, left: CGPoint) -> CGPoint {
+    return CGPoint(x: right.x - left.x, y: right.y - left.y)
+}
+
 class GameScene: SKScene {
+    let player = SKSpriteNode(imageNamed: "player")
+    
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!";
-        myLabel.fontSize = 65;
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
+        backgroundColor = SKColor.whiteColor()
+        player.position = CGPoint(x: size.width * 0.1, y: size.height * 0.5)
+        addChild(player)
         
-        self.addChild(myLabel)
+        runAction(SKAction.repeatActionForever(
+            SKAction.sequence([
+                SKAction.runBlock(addAttackingMonster),
+                SKAction.waitForDuration(1.0)
+            ])
+        ))
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        /* Called when a touch begins */
-        
-        for touch in (touches as! Set<UITouch>) {
-            let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
-        }
+    func random() -> CGFloat {
+        return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
     }
-   
-    override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
+    
+    func random(min min: CGFloat, max: CGFloat) -> CGFloat {
+        return random() * (max-min) + min
+    }
+    
+    func addAttackingMonster() {
+        let monster = SKSpriteNode(imageNamed: "monster")
+        
+        // Spawn at a random height within the area where it will be on the screen
+        let actualY = random(min: monster.size.height/2, max: size.height - monster.size.height/2)
+        // Position the monster slightly off the right edge, at the random y-coordinate calculated above
+        monster.position = CGPoint(x: size.width + monster.size.width/2, y: actualY)
+        addChild(monster)
+        
+        let actualDuration = random(min: CGFloat(2.0), max: CGFloat(4.0))
+        let actionMove = SKAction.moveTo(CGPoint(x: size.width/2, y: actualY), duration: NSTimeInterval(actualDuration))
+        let actionMoveDone = SKAction.removeFromParent()
+        monster.runAction(SKAction.sequence([actionMove, actionMoveDone]))
     }
 }

@@ -14,6 +14,20 @@ func + (left: CGPoint, right: CGPoint) -> CGPoint {
 func - (right: CGPoint, left: CGPoint) -> CGPoint {
     return CGPoint(x: right.x - left.x, y: right.y - left.y)
 }
+func * (point: CGPoint, scalar: CGFloat) -> CGPoint {
+    return CGPoint(x: point.x * scalar, y: point.y * scalar)
+}
+func / (point: CGPoint, scalar: CGFloat) -> CGPoint {
+    return CGPoint(x: point.x / scalar, y: point.y / scalar)
+}
+extension CGPoint {
+    func length() -> CGFloat {
+        return sqrt(x*x + y*y)
+    }
+    func normalized() -> CGPoint {
+        return self / length()
+    }
+}
 
 class GameScene: SKScene {
     let player = SKSpriteNode(imageNamed: "player")
@@ -52,5 +66,28 @@ class GameScene: SKScene {
         let actionMove = SKAction.moveTo(CGPoint(x: size.width/2, y: actualY), duration: NSTimeInterval(actualDuration))
         let actionMoveDone = SKAction.removeFromParent()
         monster.runAction(SKAction.sequence([actionMove, actionMoveDone]))
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+        let touchLocation = touch.locationInNode(self)
+        
+        let projectile = SKSpriteNode(imageNamed: "projectile")
+        projectile.position = player.position
+        
+        let offset = touchLocation - projectile.position
+        if offset.x < 0 { return } // To prevent it from going backwards
+        addChild(projectile)
+        
+        let direction = offset.normalized()
+        let shootVector = direction * 1000 // to be way off the screen
+        
+        let realDest = projectile.position + shootVector
+        
+        let actionMove = SKAction.moveTo(realDest, duration: 2.0)
+        let actionMoveDone = SKAction.removeFromParent()
+        projectile.runAction(SKAction.sequence([actionMove, actionMoveDone]))
     }
 }
